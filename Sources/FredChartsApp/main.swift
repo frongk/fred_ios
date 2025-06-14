@@ -1,6 +1,6 @@
 import SwiftUI
 
-@available(macOS 11.0, *)
+@available(macOS 15.0, *)
 @main
 struct FredChartsApp: App {
     @StateObject private var state = AppState(apiKey: ProcessInfo.processInfo.environment["FRED_API_KEY"] ?? "")

@@ -25,7 +25,7 @@ struct FREDObservationsResponse: Decodable {
     let observations: [FREDObservation]
 }
 
-@available(macOS 12.0, *)
+@available(iOS 16.0, macOS 12.0, *)
 class FREDClient {
     private let apiKey: String
     private let session: URLSession
