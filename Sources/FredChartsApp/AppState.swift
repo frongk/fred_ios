@@ -1,6 +1,7 @@
 import Foundation
 import SwiftUI
 
+@available(macOS 10.15, *)
 @MainActor
 class AppState: ObservableObject {
     @Published var searchText: String = ""
