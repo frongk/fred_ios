@@ -1,6 +1,7 @@
 import SwiftUI
 import Charts
 
+@available(iOS 16.0, macOS 13.0, *)
 struct ContentView: View {
     @EnvironmentObject var state: AppState
     
@@ -28,6 +29,7 @@ struct ContentView: View {
     }
 }
 
+@available(iOS 16.0, macOS 13.0, *)
 struct SeriesDetailView: View {
     @EnvironmentObject var state: AppState
     let series: FREDSeries
@@ -53,6 +55,14 @@ struct SeriesDetailView: View {
     }
 }
 
-#Preview {
-    ContentView().environmentObject(AppState(apiKey: "demo"))
+//@available(iOS 16.0, macOS 13.0, *)
+//#Preview {
+//    ContentView().environmentObject(AppState(apiKey: "demo"))
+//}
+@available(iOS 16.0, macOS 13.0, *)
+struct ContentView_Previews: PreviewProvider {
+    static var previews: some View {
+        ContentView()
+            .environmentObject(AppState(apiKey: "demo"))
+    }
 }

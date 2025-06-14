@@ -2,7 +2,7 @@ import Foundation
 import SwiftUI
 
 @MainActor
-@available(iOS 16.0, macOS 12.0, *)
+@available(iOS 16.0, macOS 13.0, *)
 class AppState: ObservableObject {
     @Published var searchText: String = ""
     @Published var seriesList: [FREDSeries] = []
