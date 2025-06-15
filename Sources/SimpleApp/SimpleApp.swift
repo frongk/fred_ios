@@ -1,12 +1,10 @@
 import SwiftUI
-import FredChartsApp
 
 @main
-struct PreviewHostApp: App {
+struct SimpleApp: App {
     var body: some Scene {
         WindowGroup {
             ContentView()
-                .environmentObject(AppState(apiKey: "demo"))
         }
     }
 }
