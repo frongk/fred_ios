@@ -1,5 +1,5 @@
-import Charts
 import SwiftUI
+
 
 struct ContentView: View {
     @StateObject private var viewModel = SearchViewModel()
@@ -46,16 +46,9 @@ struct SeriesDetailView: View {
                 ProgressView()
                     .task { await load() }
             } else {
-                Chart(observations) { obs in
-                    if let value = Double(obs.value) {
-                        LineMark(
-                            x: .value("Date", obs.date),
-                            y: .value("Value", value)
-                        )
-                    }
-                }
-                .frame(height: 300)
-                .padding()
+                LineChart(observations: observations)
+                    .frame(height: 300)
+                    .padding()
             }
         }
         .navigationTitle(series.title)
