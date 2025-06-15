@@ -37,6 +37,16 @@ struct ObservationsResponse: Decodable {
     let observations: [Observation]
 }
 
+struct SeriesInfo: Decodable {
+    let id: String
+    let title: String
+    let notes: String
+}
+
+struct SeriesInfoResponse: Decodable {
+    let seriess: [SeriesInfo]
+}
+
 final class FredAPI {
     static let shared = FredAPI()
     private init() {}
@@ -68,5 +78,17 @@ final class FredAPI {
         let (data, _) = try await URLSession.shared.data(from: components.url!)
         let decoded = try JSONDecoder().decode(ObservationsResponse.self, from: data)
         return decoded.observations
+    }
+
+    func seriesInfo(id: String) async throws -> SeriesInfo? {
+        var components = URLComponents(string: "https://api.stlouisfed.org/fred/series")!
+        components.queryItems = [
+            URLQueryItem(name: "series_id", value: id),
+            URLQueryItem(name: "api_key", value: apiKey),
+            URLQueryItem(name: "file_type", value: "json")
+        ]
+        let (data, _) = try await URLSession.shared.data(from: components.url!)
+        let decoded = try JSONDecoder().decode(SeriesInfoResponse.self, from: data)
+        return decoded.seriess.first
     }
 }

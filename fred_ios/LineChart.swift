@@ -1,7 +1,7 @@
 import SwiftUI
 import DGCharts
 
-struct LineChart: UIViewRepresentable {
+private struct LineChartRepresentable: UIViewRepresentable {
     var observations: [Observation]
 
     func makeUIView(context: Context) -> LineChartView {
@@ -30,5 +30,20 @@ struct LineChart: UIViewRepresentable {
         uiView.data = LineChartData(dataSet: dataSet)
         uiView.xAxis.valueFormatter = IndexAxisValueFormatter(values: observations.map { $0.date })
         uiView.xAxis.granularity = 1
+    }
+}
+
+struct LineChart: View {
+    var observations: [Observation]
+    var yAxisLabel: String
+
+    var body: some View {
+        HStack(spacing: 4) {
+            Text(yAxisLabel)
+                .font(.caption)
+                .rotationEffect(.degrees(-90))
+                .fixedSize()
+            LineChartRepresentable(observations: observations)
+        }
     }
 }
