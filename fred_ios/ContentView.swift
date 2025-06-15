@@ -13,7 +13,7 @@ struct ContentView: View {
                     }
                 }
             }
-            .navigationTitle("FRED Browser")
+            .navigationTitle("Unofficial FRED Browser")
             .searchable(text: $viewModel.query)
             .onChange(of: viewModel.query) { newValue in
                 Task { await viewModel.search() }

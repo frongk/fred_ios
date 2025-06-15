@@ -6,6 +6,10 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		0125DF482DFEA6AB00E565E3 /* DGCharts in Frameworks */ = {isa = PBXBuildFile; productRef = 0125DF472DFEA6AB00E565E3 /* DGCharts */; };
+/* End PBXBuildFile section */
+
 /* Begin PBXContainerItemProxy section */
 		0125DF262DFE9D7D00E565E3 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -52,6 +56,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0125DF482DFEA6AB00E565E3 /* DGCharts in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -112,6 +117,7 @@
 			);
 			name = fred_ios;
 			packageProductDependencies = (
+				0125DF472DFEA6AB00E565E3 /* DGCharts */,
 			);
 			productName = fred_ios;
 			productReference = 0125DF182DFE9D7B00E565E3 /* fred_ios.app */;
@@ -195,6 +201,9 @@
 			);
 			mainGroup = 0125DF0F2DFE9D7B00E565E3;
 			minimizedProjectReferenceProxies = 1;
+			packageReferences = (
+				0125DF462DFEA66A00E565E3 /* XCRemoteSwiftPackageReference "Charts" */,
+			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = 0125DF192DFE9D7B00E565E3 /* Products */;
 			projectDirPath = "";
@@ -550,6 +559,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		0125DF462DFEA66A00E565E3 /* XCRemoteSwiftPackageReference "Charts" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/danielgindi/Charts.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.1.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		0125DF472DFEA6AB00E565E3 /* DGCharts */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 0125DF462DFEA66A00E565E3 /* XCRemoteSwiftPackageReference "Charts" */;
+			productName = DGCharts;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 0125DF102DFE9D7B00E565E3 /* Project object */;
 }
