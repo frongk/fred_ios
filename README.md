@@ -1,14 +1,18 @@
-# SimplePreviewApp
+# FRED iOS Browser
 
-This repository contains a minimal SwiftUI application packaged as a Swift Package.
-It shows a "Hello, world!" message and can be run as a preview in Xcode.
+This project is a simple SwiftUI application that lets you search the [FRED](https://fred.stlouisfed.org/) database and display a chart of a selected series.
+
+## Features
+- Search FRED series using the official API.
+- Browse results in a list.
+- Tap a series to view its observations plotted in a chart.
 
 ## Building
-
-Open the package in Xcode:
+Open the project in Xcode:
 
 ```bash
-open Package.swift
+open fred_ios.xcodeproj
 ```
 
-Run the `PreviewHostApp` scheme on an iOS simulator or use the SwiftUI preview.
+Add your FRED API key in `FredAPI.swift` by replacing `YOUR_API_KEY`.
+Run the `fred_ios` scheme on an iOS simulator or device.
